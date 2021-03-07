@@ -1,0 +1,25 @@
+.button {
+  border: none;
+  font-size: var(--title-font-size);
+  cursor: pointer;
+  transition-property: color, fill, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.basic-button {
+  min-width: 200px;
+  min-height: 50px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.875;
+  letter-spacing: 0.06em;
+  color: var(--basic-light-text-color);
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  box-shadow: var(--button-shadow);
+
+  &:focus,
+  &:hover {
+    background-color: var(--button-color);
+  }
+}

@@ -1,0 +1,12 @@
+.section-title {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.03em;
+  line-height: 1.167;
+
+  @include adaptive-for-desktop {
+    margin-bottom: 50px;
+  }
+}

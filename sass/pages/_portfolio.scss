@@ -1,0 +1,144 @@
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+
+  @include adaptive-for-tablet {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  @include adaptive-for-desktop {
+    margin-bottom: 50px;
+  }
+}
+
+.filter__item {
+  margin-bottom: 15px;
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  @include adaptive-for-tablet {
+    margin-bottom: 0;
+  }
+}
+
+.filter-button {
+  padding: 6px 22px;
+  border-radius: 4px;
+  font-weight: var(--font-weight-middle);
+  line-height: 1.625;
+  letter-spacing: 0.03em;
+  background-color: var(--secondary-bg-color);
+
+  &:focus,
+  &:hover {
+    outline: none;
+    color: var(--basic-light-text-color);
+    background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.active-button {
+  color: var(--basic-light-text-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.projects__item {
+  outline: var(--border-color) solid 1px;
+  padding-inline-start: 0;
+  transition: all 500ms;
+
+  @include adaptive-before-tablet {
+    @include card-number-in-line(1);
+  }
+
+  @include adaptive-for-tablet {
+    @include card-number-in-line(2);
+  }
+
+  @include adaptive-for-desktop {
+    @include card-number-in-line(3);
+  }
+}
+
+.projects__item .link {
+  display: block;
+
+  &:focus,
+  &:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+    outline: none;
+  }
+}
+
+.projects__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.556;
+  color: var(--basic-light-text-color);
+  background-color: var(--project-overlay-color);
+  transform: translateY(0);
+  transition: var(--basic-transform-animation);
+
+  .projects__item .link:focus &,
+  .projects__item .link:hover & {
+    transform: translateY(-100%);
+  }
+}
+
+.projects__content {
+  padding: 20px 24px;
+}
+
+.projects__name {
+  margin-bottom: 4px;
+  font-weight: var(--font-weight-bold);
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.projects__type {
+  font-size: var(--title-font-size);
+  line-height: 1.875;
+  color: var(--basic-dark-text-color);
+}
+
+.anime {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.hidden {
+  animation-name: animate-hide;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate-hide {
+  from {
+    visibility: visible;
+  }
+
+  to {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+  }
+}

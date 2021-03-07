@@ -1,0 +1,127 @@
+.footer {
+  margin-top: auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: var(--basic-light-text-color);
+  background-color: var(--dark-bg-color);
+}
+
+.footer .container {
+  @include adaptive-for-tablet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+}
+
+.footer__contacts-wrap {
+  text-align: center;
+  margin-bottom: 60px;
+
+  @include adaptive-for-desktop {
+    width: 230px;
+    margin-right: 70px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+
+.footer__contacts-list {
+  @include adaptive-for-desktop {
+    min-width: 230px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.footer__contacts-item {
+  display: block;
+  margin-bottom: 8px;
+  color: inherit;
+
+  &:not(:first-child) {
+    color: var(--transparent-text-color);
+  }
+
+  &:focus,
+  &:hover {
+    outline: none;
+    color: var(--accent-color);
+  }
+}
+
+.footer__social-wrap {
+  text-align: center;
+  margin-bottom: 60px;
+
+  @include adaptive-for-desktop {
+    margin-right: 93px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+
+.footer__appeal {
+  margin-bottom: 20px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.143;
+  text-transform: uppercase;
+}
+
+.footer__subscribe-form-wrap {
+  text-align: center;
+
+  @include adaptive-for-desktop {
+    min-width: 570px;
+    text-align: left;
+  }
+}
+
+.footer__subscribe-form {
+  display: block;
+
+  @include adaptive-for-desktop {
+    display: flex;
+  }
+}
+
+#footer-form-mail {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px 16px;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: var(--basic-light-text-color);
+  background-color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+
+  @include adaptive-for-tablet {
+    min-width: 450px;
+  }
+
+  @include adaptive-for-desktop {
+    min-width: 358px;
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+
+  &::placeholder {
+    color: var(--transparent-text-color);
+  }
+}
+
+.subscribe-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.subscribe-button svg {
+  margin-left: 10px;
+  fill: currentColor;
+}

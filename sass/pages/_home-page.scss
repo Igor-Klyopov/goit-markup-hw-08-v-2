@@ -1,0 +1,135 @@
+.feature__item {
+  @include adaptive-before-tablet {
+    @include card-number-in-line(1);
+  }
+
+  @include adaptive-for-tablet {
+    @include card-number-in-line(2);
+  }
+
+  @include adaptive-for-desktop {
+    @include card-number-in-line(4);
+  }
+}
+
+.feature__icon-wrap {
+  padding: 25px 100px;
+  margin-bottom: 30px;
+  text-align: center;
+  background-color: var(--secondary-bg-color);
+  border-radius: 4px;
+}
+
+.feature__subtitle {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+}
+
+.competence {
+  padding-bottom: 94px;
+
+  @include adaptive-before-desktop {
+    display: none;
+  }
+}
+
+.competence__item {
+  @include card-number-in-line(3);
+}
+
+.competence__kind {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.143;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--basic-light-text-color);
+  background: rgba(47, 48, 58, 0.8);
+}
+
+.team {
+  background-color: var(--secondary-bg-color);
+}
+
+.team__member {
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: var(--primary-bg-color);
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  @include adaptive-before-tablet {
+    @include card-number-in-line(1);
+  }
+
+  @include adaptive-for-tablet {
+    @include card-number-in-line(2);
+  }
+
+  @include adaptive-for-desktop {
+    @include card-number-in-line(4);
+  }
+}
+
+.team__member-image {
+  margin-bottom: 30px;
+}
+
+.team__member-name {
+  margin-bottom: 10px;
+  font-weight: var(--font-weight-middle);
+  font-size: var(--title-font-size);
+  line-height: 1.192;
+}
+
+.team-member .paragraph {
+  margin-bottom: 16px;
+}
+
+.clients .list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clients__item {
+  height: 90px;
+
+  @include card-number-in-line(2);
+
+  @include adaptive-for-tablet {
+    @include card-number-in-line(3);
+  }
+
+  @include adaptive-for-desktop {
+    @include card-number-in-line(6);
+  }
+}
+
+.clients__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  fill: var(--icon-color);
+
+  &:focus,
+  &:hover {
+    fill: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    outline: none;
+  }
+}
